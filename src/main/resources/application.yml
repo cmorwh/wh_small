@@ -28,3 +28,9 @@ redis:
       authCode: "hello:world:"
     expire:
       authCode: 120 # 验证码超期时间
+
+jwt:
+  secret: 123123
+  expiration: 604800  #60*60*24*7
+  tokenHeader: Authorization #JWT存储的请求头
+  tokenHead: 'banner '  #JWT负载中拿到开头

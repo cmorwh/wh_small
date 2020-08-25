@@ -23,6 +23,19 @@ public class CommonResult<T> {
         this.message = message;
     }
 
+    public static Object unauthorized(String message) {
+        return new CommonResult<>(message);
+    }
+
+    public static  void   failed() {
+
+    }
+
+    public static CommonResult validateFailed(String data) {
+        return new CommonResult(data);
+    }
+
+
     public String getCode() {
         return code;
     }
@@ -69,5 +82,9 @@ public class CommonResult<T> {
 
     public static <T> CommonResult<T> faild(String code,String message){
         return new CommonResult<>(code,message);
+    }
+
+    public static Object forbidden(String message) {
+        return new CommonResult<>(message);
     }
 }
