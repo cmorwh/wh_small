@@ -82,4 +82,11 @@
       `type` = #{type,jdbcType=INTEGER}
     where id = #{id,jdbcType=BIGINT}
   </update>
+
+  <select id="selectByAdminId" resultMap="BaseResultMap" parameterType="java.lang.Long">
+  select
+  <include refid="Base_Column_List"/>
+  from ums_admin_permission_relation
+  where admin_id = #{adminId,jdbcType=BIGINT}
+</select>
 </mapper>

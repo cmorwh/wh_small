@@ -1,9 +1,13 @@
 package com.cmorwh.sche.service.impl;
 
 import com.cmorwh.sche.bean.UmsAdmin;
+import com.cmorwh.sche.bean.UmsAdminPermissionRelation;
 import com.cmorwh.sche.bean.UmsPermission;
 import com.cmorwh.sche.common.CommonResult;
 import com.cmorwh.sche.mapper.UmsAdminMapper;
+import com.cmorwh.sche.mapper.UmsAdminPermissionRelationMapper;
+import com.cmorwh.sche.mapper.UmsAdminRoleRelationMapper;
+import com.cmorwh.sche.mapper.UmsPermissionMapper;
 import com.cmorwh.sche.service.UmsAdminService;
 import com.cmorwh.sche.utils.JwtTokenUtil;
 import lombok.extern.slf4j.Slf4j;
@@ -22,6 +26,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -40,6 +45,11 @@ public class UmsAdminServiceImpl implements UmsAdminService {
     UmsAdminMapper adminMapper;
     @Autowired
     UserDetailsService userDetailsService;
+    @Autowired
+    UmsPermissionMapper umsPermissionMapper;
+    @Autowired
+    UmsAdminRoleRelationMapper adminRoleRelationMapper;
+
     @Autowired
     JwtTokenUtil jwtTokenUtil;
     @Value("${jwt.tokenHead}")
@@ -101,7 +111,15 @@ public class UmsAdminServiceImpl implements UmsAdminService {
 
     @Override
     public List<UmsPermission> getPermissionList(Long id) {
+       /* List<UmsPermission> permissions = new ArrayList<>();
+        List<UmsAdminPermissionRelation>   relations = adminPermissionRelationMapper.selectByAdminId(id);
+        for (UmsAdminPermissionRelation adminPermission:relations) {
+            UmsPermission umsPermission = umsPermissionMapper.selectByPrimaryKey(adminPermission.getPermissionId());
+            permissions.add(umsPermission);
+        }
+        return permissions;*/
 
         return null;
+
     }
 }

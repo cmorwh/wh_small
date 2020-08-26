@@ -9,11 +9,8 @@ import lombok.Data;
 /**
  * Created on 2020/8/24 17:48 with IDEA
  * author: wh
- * Description: 
+ * Description: 后台用户权限表
  */
-/**
-    * 后台用户权限表
-    */
 @ApiModel(value="com-cmorwh-sche-bean-UmsPermission")
 @Data
 public class UmsPermission implements Serializable {

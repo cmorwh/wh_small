@@ -24,7 +24,6 @@ public class AdminUserDetails implements UserDetails {
         this.permissionList = permissionList;
     }
 
-
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         //返回当前用户的权限

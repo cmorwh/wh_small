@@ -150,4 +150,10 @@
       sort = #{sort,jdbcType=INTEGER}
     where id = #{id,jdbcType=BIGINT}
   </update>
+  <!--<select id="selectByPermissionId" resultMap="BaseResultMap" parameterType="java.lang.Long">
+    select
+    <include refid="Base_Column_List"/>
+    from ums_permission
+    where
+</select>-->
 </mapper>
