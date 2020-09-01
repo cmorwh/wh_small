@@ -32,5 +32,4 @@ public class BrandController {
         List<PmsBrand> allBrand = pmBrandService.getAllBrand();
         return CommonResult.success(allBrand);
     }
-
 }

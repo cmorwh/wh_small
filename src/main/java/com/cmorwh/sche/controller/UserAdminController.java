@@ -9,6 +9,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
@@ -42,6 +43,7 @@ public class UserAdminController {
         return CommonResult.success(umsAdmin);
     }
 
+    @PreAuthorize("hasAuthority('pms:brand:read')")
     @ApiOperation("获取用户所有权限（包括+-权限）")
     @RequestMapping(value = "/permission/{adminId}", method = RequestMethod.GET)
     public CommonResult<List<UmsPermission>> getPermissionList(@PathVariable Long adminId) {
