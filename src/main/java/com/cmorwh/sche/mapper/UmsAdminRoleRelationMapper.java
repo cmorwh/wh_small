@@ -1,7 +1,10 @@
 package com.cmorwh.sche.mapper;
 
 import com.cmorwh.sche.bean.UmsAdminRoleRelation;
+import com.cmorwh.sche.bean.UmsPermission;
 import org.apache.ibatis.annotations.Mapper;
+
+import java.util.List;
 
 /**
  * Created on 2020/8/24 17:47 with IDEA
@@ -21,4 +24,6 @@ public interface UmsAdminRoleRelationMapper {
     int updateByPrimaryKeySelective(UmsAdminRoleRelation record);
 
     int updateByPrimaryKey(UmsAdminRoleRelation record);
+
+    List<UmsPermission> getPermissionByAdminId(Long id);
 }

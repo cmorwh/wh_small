@@ -69,4 +69,14 @@
       role_id = #{roleId,jdbcType=BIGINT}
     where id = #{id,jdbcType=BIGINT}
   </update>
+
+   <!--获取用户权限的sql  有缺漏-->
+   <!--获取用户权限的sql  有缺漏-->
+   <!--获取用户权限的sql  有缺漏-->
+  <select id="getPermissionByAdminId" resultType="com.cmorwh.sche.bean.UmsPermission" parameterType="java.lang.Long">
+  SELECT * FROM ums_admin_role_relation uarr LEFT JOIN ums_role ur
+    ON uarr.`role_id` = ur.`id` LEFT JOIN ums_role_permission_relation urpr
+    ON urpr.`role_id` = ur.`id` LEFT JOIN ums_permission up
+    ON urpr.`permission_id` = up.id WHERE uarr.`admin_id`=#{adminId,jdbcType=BIGINT}
+  </select>
 </mapper>

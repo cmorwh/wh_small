@@ -96,7 +96,7 @@ public class UmsAdminServiceImpl implements UmsAdminService {
             //对密码进行加密
             //String enCoderPassword = passwordEncoder.encode(password);
             UserDetails userDetails = userDetailsService.loadUserByUsername(username);
-            LOGGER.debug("登录信息:{}",userDetails);
+            LOGGER.debug("登录信息:{}",userDetails.toString());
             if(!passwordEncoder.matches(password,userDetails.getPassword())){
                 throw new BadCredentialsException("密码不正确");
             }
@@ -118,8 +118,8 @@ public class UmsAdminServiceImpl implements UmsAdminService {
             permissions.add(umsPermission);
         }
         return permissions;*/
-        //TODO
-        return null;
+        List<UmsPermission> permissionByAdminId = adminRoleRelationMapper.getPermissionByAdminId(id);
+        return permissionByAdminId;
 
     }
 }

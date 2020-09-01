@@ -12,7 +12,7 @@ import lombok.Data;
     * 品牌表
     */
 @Data
-public class PmsBrand implements Serializable {
+public class PmsBrand  implements Serializable{
     @ApiModelProperty(value="")
     private Long id;
 

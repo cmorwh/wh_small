@@ -24,5 +24,6 @@ public interface UmsPermissionMapper {
 
     int updateByPrimaryKey(UmsPermission record);
 
+
     /*List<UmsPermission> selectByPermissionId(Long permissionId);*/
 }
