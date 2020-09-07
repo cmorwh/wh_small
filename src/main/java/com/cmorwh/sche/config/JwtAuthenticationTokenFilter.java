@@ -21,7 +21,7 @@ import java.io.IOException;
 /**
  * Created on 2020/8/25 11:57 with IDEA
  * author: wh
- * Description: JWT登录授权过滤器
+ * Description: 自定义JWT登录授权过滤器
  */
 public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
     private static final Logger LOGGER = LoggerFactory.getLogger(JwtAuthenticationTokenFilter.class);
